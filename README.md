@@ -1,4 +1,4 @@
-# API-automation-project
+# API-automation-project in Ruby using  HTTParty
 
 #references:
 
