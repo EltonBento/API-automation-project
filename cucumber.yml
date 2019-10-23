@@ -1,0 +1,6 @@
+---
+# --- =>defines a template
+
+default: -p pretty  -p html
+pretty: --format pretty
+html: --format html --out=report/report.html

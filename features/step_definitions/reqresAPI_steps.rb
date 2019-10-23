@@ -43,8 +43,26 @@ Then("I should get created messege") do
 end
 
 
+When("I send a Put request to update a user") do
+    $response = @api.putRequest(2)
+end
+  
+Then("I should get user message updated code") do
+    expect($response.code).to eq(200)
 
-#references:
-#https://medium.com/cwi-software/https-medium-com-maximilianoalves-iniciando-testes-de-servicos-com-httparty-e-rspec-366fe93525ab
-#
-#https://medium.com/@rafaelberam/automa%C3%A7%C3%A3o-de-testes-api-com-httparty-e-cucumber-bdd-d955749affa8
+    puts "Response Code: #{$response.code}"
+    puts "Name         : #{$response['name']}"
+    puts "Job          : #{$response['job']}"
+    puts "Updated At   : #{$response['updatedAt']}"
+end 
+  
+When("I send a delete request to delete a user") do
+    $response = @api.deleteRequest(2)
+end
+  
+Then("I should get user deleted code") do
+    expect($response.code).to eq(204)
+    puts "Response Code: #{$response.code}"
+end
+
+

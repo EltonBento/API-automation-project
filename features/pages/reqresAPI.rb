@@ -16,4 +16,12 @@ class ReqresAPI
     def postRequest
         self.class.post("/users", @options)
     end
+
+    def deleteRequest(id)
+        self.class.delete("/users/#{id}")
+    end    
+
+    def putRequest(id)
+        self.class.put("/users/#{id}", @options)
+    end    
 end
